@@ -365,7 +365,7 @@ If this code helps your work, please cite the paper:
 ```bibtex
 @misc{zenith2026,
   title  = {{ZENITH}: Detection-Gated Opinion Pooling of {CNN}, Transformer and Quantum-Hybrid Segmenters for Brain Tumor {MRI}},
-  author = {First Author and Second Author and Third Author and Fourth Author and Fifth Author},
+  author = {Md Mahmudul Hoque},
   year   = {2026}
 }
 ```
