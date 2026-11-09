@@ -28,7 +28,7 @@
 <br>
 
 > [!NOTE]
-> This repository contains the code behind the paper **"ZENITH: Detection-Gated Opinion Pooling of CNN, Transformer and Quantum-Hybrid Segmenters for Brain Tumor MRI"**. All numbers below come from one complete run of `zenith.ipynb` (three repeats, every network trained from scratch).
+> This repository contains the code behind the paper **"ZENITH: Detection-Gated Opinion Pooling of CNN, Transformer and Quantum-Hybrid Segmenters for Brain Tumor MRI"**. All numbers below come from one complete run of `zenith_updated_v1.ipynb` (three repeats, every network trained from scratch).
 
 ## Overview
 
@@ -40,7 +40,7 @@ For every case, ZENITH returns a mask per region and two voxel-wise uncertainty 
 
 **Highlights**
 
-- **One notebook, end to end.** Data checks, thirteen models, fusion, baselines, a sensitivity study, statistics, seventeen figures and the result tables all come from a single run of `zenith.ipynb`.
+- **One notebook, end to end.** Data checks, thirteen models, fusion, baselines, a sensitivity study, statistics, seventeen figures and the result tables all come from a single run of `zenith_updated_v1.ipynb`.
 - **Mixed members.** 2D and 3D CNNs, 2D and 3D transformers, and two U-Nets with exactly simulated, noiseless quantum circuits of 4 and 8 qubits.
 - **Detection as a spatial prior.** Faster R-CNN, RetinaNet and FCOS boxes are painted into soft 3D zones, merged with a noisy-OR and used to gate the fused map.
 - **Fair baselines.** Learned stackers, a stacker that also sees the gate and a hard detector mask are fitted on the same voxels as ZENITH.
@@ -298,7 +298,7 @@ The study uses only these public, de-identified data and is not a clinical trial
 
 ### Run on Kaggle
 
-1. Download `zenith.ipynb` from this repository and import it into a new Kaggle notebook.
+1. Download `zenith_updated_v1.ipynb` from this repository and import it into a new Kaggle notebook.
 2. Add both datasets above as inputs.
 3. In the notebook settings, choose the **GPU T4** accelerator and turn **Internet** on. MONAI is installed at start-up and the detector backbones download ImageNet weights.
 4. Choose a profile in Section 1 and press **Run all**.
@@ -322,7 +322,7 @@ export BRATS_NII_ROOT=/path/to/MICCAI_BraTS2020_TrainingData
 export BRATS_H5_ROOT=/path/to/BraTS2020_training_data/content/data
 export BRATS_WORK_DIR=./outputs
 
-jupyter nbconvert --to notebook --execute zenith.ipynb --output zenith_executed.ipynb --ExecutePreprocessor.timeout=-1
+jupyter nbconvert --to notebook --execute zenith_updated_v1.ipynb --output zenith_executed.ipynb --ExecutePreprocessor.timeout=-1
 ```
 
 A CUDA GPU with 16 GB of memory is enough for the `standard` profile. Setting `BRATS_SMOKE=1` runs every code path on a CPU with tiny models in a few minutes, which is useful for checking an installation (the numbers it produces are meaningless).
@@ -445,7 +445,7 @@ Everything is written to `BRATS_WORK_DIR` (by default `/kaggle/working`). `zenit
 
 | Path | Description |
 |:--|:--|
-| `zenith.ipynb` | the complete pipeline with the outputs of the reported run |
+| `zenith_updated_v1.ipynb` | the complete pipeline with the outputs of the reported run |
 | `recover_h5_mapping.py` | standalone recovery and check of the HDF5 to NIfTI mapping |
 | `mapping/` | mapping report, per-patient check and mapping JSON of the reported run |
 | `tests/` | synthetic data generator and the test of the mapping script |
